@@ -61,7 +61,13 @@ def backup_database():
         print(f"Lỗi backup: {e}")
 
 def main():
-    backup_database()
+    if current_time.hour == 0 and current_time.minute == 0:
+        print("Thực hiện backup database...")
+        backup_database()
+        print("Backup hoàn tất.")
+    else:
+        print("Không phải thời gian backup.")
+
 
 if __name__ == "__main__":
     if not all([SENDER_EMAIL, APP_PASSWORD, RECEIVER_EMAIL]):
