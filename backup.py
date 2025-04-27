@@ -61,12 +61,7 @@ def backup_database():
         print(f"Lỗi backup: {e}")
 
 def main():
-    while True:
-        now = datetime.now()
-        if now.hour == 0 and now.minute == 0:
-            backup_database()
-            time.sleep(60)
-        time.sleep(30)
+    backup_database()
 
 if __name__ == "__main__":
     if not all([SENDER_EMAIL, APP_PASSWORD, RECEIVER_EMAIL]):
