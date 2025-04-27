@@ -61,6 +61,8 @@ def backup_database():
         print(f"Lỗi backup: {e}")
 
 def main():
+    current_time = datetime.now()
+    print(f"Thời gian hiện tại: {current_time.strftime('%Y-%m-%d %H:%M:%S')}")
     if current_time.hour == 0 and current_time.minute == 0:
         print("Thực hiện backup database...")
         backup_database()
